@@ -176,6 +176,38 @@ header{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:3px 
 footer{background:var(--ink);color:#9a9bab;text-align:center;padding:28px 20px;border-top:3px solid var(--orange);font-size:.9rem}
 .float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.35)}
 .float svg{width:30px;height:30px}
+
+/* plain headings */
+h2.plain{position:relative;padding-top:20px}
+h2.plain::before{content:"";position:absolute;top:0;left:0;width:72px;height:6px;border-radius:3px;background:var(--orange)}
+/* portfolio */
+.work{background:var(--ink);padding:88px 0 0}
+.work h2.big{color:#fff;font-size:clamp(3rem,11vw,6.5rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.work .lead{color:#c9cad4;font-size:1.2rem;margin:1rem 0 3rem}
+.proj{border:0;padding:0 0 96px;position:relative}
+.phead{position:relative;padding-top:56px;padding-bottom:28px;border-top:2px solid #2c2d3a}
+.bgic{position:absolute;right:0;top:20px;width:min(56vw,300px);height:auto;color:var(--accent);opacity:.14;stroke-width:.5;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.num{display:block;font:800 clamp(4.5rem,18vw,9rem) var(--head);line-height:.9;color:transparent;-webkit-text-stroke:2px var(--accent)}
+.proj h3{position:relative;color:#fff;font-size:clamp(2.3rem,9vw,5rem);font-weight:800;line-height:1.03;letter-spacing:-.02em;margin:.6rem 0 .5rem;max-width:16ch}
+.tag{position:relative;color:var(--accent);font:600 clamp(1.3rem,4vw,1.9rem) var(--head);margin-bottom:.4rem}
+.proj .desc{position:relative;color:#d6d7de;font-size:1.2rem;margin:.3rem 0 1.4rem;max-width:44ch}
+.chips{position:relative;display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--accent);color:#fff;border-radius:999px;padding:.55rem 1.05rem;font:600 1rem var(--body)}
+.chip.fill{background:var(--accent);color:var(--ink);font-weight:700}
+.chip .ic{color:var(--accent)}
+.ic{width:1.3em;height:1.3em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lab{display:flex;align-items:center;gap:.7rem;color:#fff;font:800 clamp(1.5rem,5vw,2.2rem) var(--head);margin:36px 0 16px}
+.lab .ic{color:var(--accent);width:1.2em;height:1.2em}
+.hint{margin-left:auto;font:500 .95rem var(--body);color:#9a9bab}
+.fullvid{width:100%;aspect-ratio:16/9;background:#000}
+.fullvid iframe{width:100%;height:100%;border:0;display:block}
+.reel{gap:14px;padding:0 20px 8px max(20px,calc((100vw - 1100px)/2));scroll-padding-left:max(20px,calc((100vw - 1100px)/2))}
+.reel figure{position:relative;flex:0 0 min(78vw,340px);scroll-snap-align:start}
+.reel video{border-radius:0;aspect-ratio:9/16;background:#000}
+.cap{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:.7rem;padding:70px 16px 16px;color:var(--accent);background:linear-gradient(to top,rgba(10,10,16,.92),transparent);pointer-events:none}
+.cap .ic{width:2rem;height:2rem}
+.cap b{display:block;color:#fff;font:800 1.35rem/1.1 var(--head);text-transform:uppercase}
+.cap small{color:#d6d7de;font-size:.9rem}
 </style>
 </head>
 <body>
@@ -186,6 +218,12 @@ footer{background:var(--ink);color:#9a9bab;text-align:center;padding:28px 20px;b
     <path d="M46 14a24 24 0 1 0 0 36" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
     <path d="M27 23l16 9-16 9z" fill="#F5A33A" stroke="#F5A33A" stroke-width="3" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><rect x="2" y="7" width="13" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3z"/></symbol>
+  <symbol id="i-crane" viewBox="0 0 24 24"><path d="M6 22V4h2v18M8 6h13M8 10l8-4M19 6v6"/><rect x="17.5" y="12" width="3" height="3"/><path d="M3 22h8"/></symbol>
+  <symbol id="i-mixer" viewBox="0 0 24 24"><path d="M6 3v18M12 3v18M18 3v18"/><rect x="4" y="14" width="4" height="3" rx="1"/><rect x="10" y="7" width="4" height="3" rx="1"/><rect x="16" y="11" width="4" height="3" rx="1"/></symbol>
+  <symbol id="i-live" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></symbol>
+  <symbol id="i-setup" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></symbol>
 </svg>
 
 <header>
@@ -278,53 +316,61 @@ footer{background:var(--ink);color:#9a9bab;text-align:center;padding:28px 20px;b
 
 <section class="work" id="work">
   <div class="wrap">
-    <div class="tc"><div class="tc"><h2>Our work</h2><p>Recent events we’ve filmed and streamed.</p></div>
-    <article class="proj" id="limitless">
-      <h3>Limitless Without Borders</h3>
-      <p class="meta"><span><b>Event type</b> Summit</span><span><b>Year</b> 2026</span></p>
-      <p class="meta"><span><b>Services</b> Live stream, event coverage including crane operation, roving cameras, live mixing</span></p>
-      <p class="desc">A summit on career, life and business growth, themed “Building for Global Relevance.”</p>
-      <p class="sublabel">Behind the scenes</p>
-      <p class="swipe">Swipe to see more →</p>
-      <div class="reel">
-        <figure><video src="limitless-crane-operation.MP4" muted loop playsinline preload="metadata"></video><figcaption>Crane operation</figcaption></figure>
-        <figure><video src="limitless-live-mixing.MP4" muted loop playsinline preload="metadata"></video><figcaption>Live mixing</figcaption></figure>
-        <figure><video src="limitless-focus-cam.MP4" muted loop playsinline preload="metadata"></video><figcaption>Focus cam</figcaption></figure>
-      </div>
-    </article>
-    <article class="proj" id="throne">
-      <h3>Throne of Jokes</h3>
-      <p class="meta"><span><b>Event type</b> Comedy show</span><span><b>Year</b> 2026</span></p>
-      <p class="meta"><span><b>Services</b> Live stream, event coverage including focus cams, roving cameras, red carpet coverage, live mixing, media setup</span></p>
-      <p class="desc">A night of live comedy hosted by Ilefo Jesu.</p>
-      <p class="sublabel">Livestream</p>
-      <!-- Replace the inner div with: <iframe src="https://www.youtube.com/embed/THRONE_VIDEO_ID" title="Throne of Jokes livestream" allowfullscreen loading="lazy"></iframe> -->
-      <div class="video"><iframe src="https://www.youtube.com/embed/vhvlBTSAkEE" title="Throne of Jokes livestream" allowfullscreen loading="lazy"></iframe></div>
-      <p class="sublabel">Behind the scenes</p>
-      <p class="swipe">Swipe to see more →</p>
-      <div class="reel">
-        <figure><video src="throne-roving-camera.MP4" muted loop playsinline preload="metadata"></video><figcaption>Roving camera</figcaption></figure>
-        <figure><video src="throne-live-mixing.MP4" muted loop playsinline preload="metadata"></video><figcaption>Live mixing</figcaption></figure>
-        <figure><video src="throne-focus-cam.MP4" muted loop playsinline preload="metadata"></video><figcaption>Focus cam</figcaption></figure>
-      </div>
-    </article>
-    <article class="proj" id="mm">
-      <h3>Marriage and Money Summit 2.0</h3>
-      <p class="meta"><span><b>Event type</b> Summit</span><span><b>Year</b> 2026</span></p>
-      <p class="meta"><span><b>Services</b> Live stream, event coverage including focus cam, roving camera, live mixing, media setup</span></p>
-      <p class="desc">A summit on marriage and finance, built around the theme “The Power Couple Blueprint.”</p>
-      <p class="sublabel">Livestream</p>
-      <!-- Replace the inner div with: <iframe src="https://www.youtube.com/embed/MM_VIDEO_ID" title="Marriage and Money Summit 2.0 livestream" allowfullscreen loading="lazy"></iframe> -->
-      <div class="video"><iframe src="https://www.youtube.com/embed/3OU1otN3EPM" title="Marriage and Money Summit 2.0 livestream" allowfullscreen loading="lazy"></iframe></div>
-      <p class="sublabel">Behind the scenes</p>
-      <p class="swipe">Swipe to see more →</p>
-      <div class="reel">
-        <figure><video src="mm-roving-camera.MP4" muted loop playsinline preload="metadata"></video><figcaption>Roving camera</figcaption></figure>
-        <figure><video src="mm-focus-cam.MP4" muted loop playsinline preload="metadata"></video><figcaption>Focus cam</figcaption></figure>
-        <figure><video src="mm-live-mixing.MP4" muted loop playsinline preload="metadata"></video><figcaption>Live mixing</figcaption></figure>
-      </div>
-    </article>
+    <h2 class="big">Our work</h2>
+    <p class="lead">Real events we’ve filmed, mixed and streamed.</p>
   </div>
+    <article class="proj" id="limitless" style="--accent:#F5A33A">
+      <div class="wrap phead">
+        <svg class="bgic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crane"/></svg>
+        <span class="num">01</span>
+        <h3>Limitless Without Borders</h3>
+        <p class="tag">“Building for Global Relevance”</p>
+        <p class="desc">A summit on career, life and business growth.</p>
+        <div class="chips"><span class="chip fill">Summit</span><span class="chip fill">2026</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-live"/></svg>Live stream</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Event coverage</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crane"/></svg>Crane operation</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Roving cameras</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg>Live mixing</span></div>
+      </div>
+      <div class="wrap"><p class="lab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Behind the scenes <span class="hint">Swipe →</span></p></div>
+      <div class="reel">
+        <figure><video src="limitless-crane-operation.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crane"/></svg><div><b>Crane operation</b><small>1 / 3</small></div></div></figure>
+        <figure><video src="limitless-live-mixing.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg><div><b>Live mixing</b><small>2 / 3</small></div></div></figure>
+        <figure><video src="limitless-focus-cam.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg><div><b>Focus cam</b><small>3 / 3</small></div></div></figure>
+      </div>
+    </article>
+    <article class="proj" id="throne" style="--accent:#FFE3B8">
+      <div class="wrap phead">
+        <svg class="bgic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>
+        <span class="num">02</span>
+        <h3>Throne of Jokes</h3>
+        
+        <p class="desc">A night of live comedy hosted by Ilefo Jesu.</p>
+        <div class="chips"><span class="chip fill">Comedy show</span><span class="chip fill">2026</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-live"/></svg>Live stream</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Event coverage</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Focus cams</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Roving cameras</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>Red carpet coverage</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg>Live mixing</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-setup"/></svg>Media setup</span></div>
+      </div>
+      <div class="wrap"><p class="lab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-live"/></svg>Livestream</p></div>
+      <div class="fullvid"><iframe src="https://www.youtube.com/embed/vhvlBTSAkEE" title="Throne of Jokes livestream" allowfullscreen loading="lazy"></iframe></div>
+      <div class="wrap"><p class="lab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Behind the scenes <span class="hint">Swipe →</span></p></div>
+      <div class="reel">
+        <figure><video src="throne-roving-camera.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg><div><b>Roving camera</b><small>1 / 3</small></div></div></figure>
+        <figure><video src="throne-live-mixing.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg><div><b>Live mixing</b><small>2 / 3</small></div></div></figure>
+        <figure><video src="throne-focus-cam.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg><div><b>Focus cam</b><small>3 / 3</small></div></div></figure>
+      </div>
+    </article>
+    <article class="proj" id="mm" style="--accent:#E8922A">
+      <div class="wrap phead">
+        <svg class="bgic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg>
+        <span class="num">03</span>
+        <h3>Marriage and Money Summit 2.0</h3>
+        <p class="tag">“The Power Couple Blueprint”</p>
+        <p class="desc">A summit on marriage and finance.</p>
+        <div class="chips"><span class="chip fill">Summit</span><span class="chip fill">2026</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-live"/></svg>Live stream</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Event coverage</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Focus cam</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Roving camera</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg>Live mixing</span><span class="chip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-setup"/></svg>Media setup</span></div>
+      </div>
+      <div class="wrap"><p class="lab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-live"/></svg>Livestream</p></div>
+      <div class="fullvid"><iframe src="https://www.youtube.com/embed/3OU1otN3EPM" title="Marriage and Money Summit 2.0 livestream" allowfullscreen loading="lazy"></iframe></div>
+      <div class="wrap"><p class="lab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg>Behind the scenes <span class="hint">Swipe →</span></p></div>
+      <div class="reel">
+        <figure><video src="mm-roving-camera.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg><div><b>Roving camera</b><small>1 / 3</small></div></div></figure>
+        <figure><video src="mm-focus-cam.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cam"/></svg><div><b>Focus cam</b><small>2 / 3</small></div></div></figure>
+        <figure><video src="mm-live-mixing.MP4" muted loop playsinline preload="metadata"></video><div class="cap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mixer"/></svg><div><b>Live mixing</b><small>3 / 3</small></div></div></figure>
+      </div>
+    </article>
 </section>
 
 <section class="packages" id="packages">
@@ -371,7 +417,7 @@ footer{background:var(--ink);color:#9a9bab;text-align:center;padding:28px 20px;b
 
 <section id="process">
   <div class="wrap">
-    <div class="tc"><h2>How we work</h2><p>Every booking follows the same four steps.</p></div>
+    <h2 class="plain">How we work</h2><p class="lead">Every booking follows the same four steps.</p>
     <ol class="steps">
       <li><strong>Enquire</strong>Tell us the event type, date, venue and what you need covered.</li>
       <li><strong>Plan</strong>We agree the services, team and equipment, and confirm the quote.</li>
@@ -384,7 +430,7 @@ footer{background:var(--ink);color:#9a9bab;text-align:center;padding:28px 20px;b
 <section class="contact" id="contact">
   <div class="wrap">
     <div>
-      <div class="tc"><h2>Tell us about your event</h2><p>Send the date, venue and what you need covered. We’ll reply on WhatsApp with a quote.</p></div>
+      <h2 class="plain">Tell us about your event</h2><p class="lead">Send the date, venue and what you need covered. We’ll reply on WhatsApp with a quote.</p>
       <a class="btn dark" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20to%20book%20Clasik%20for%20my%20event." target="_blank" rel="noopener">Book on WhatsApp</a>
     </div>
     <div class="cbox">
