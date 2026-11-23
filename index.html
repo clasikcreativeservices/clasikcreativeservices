@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clasik Creative Services | Event production, documentary and livestreaming in Lagos</title>
+<meta name="description" content="Clasik Creative Services films and livestreams weddings, ceremonies and programmes in Lagos, Nigeria. Book on WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M46 14a24 24 0 1 0 0 36' fill='none' stroke='%2314141C' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M27 23l16 9-16 9z' fill='%23F5A33A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14141C; --ink-2:#1F1F2B; --orange:#F5A33A; --orange-d:#C97A12;
+  --mist:#F2F3F5; --white:#fff; --slate:#4A4A57; --line:#DDDFE4;
+  --head:'Poppins',system-ui,sans-serif; --body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);color:var(--slate);background:var(--white);line-height:1.6;font-size:17px}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.15}
+h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;margin-bottom:.6rem}
+h3{font-size:1.25rem;font-weight:600}
+.wrap{width:min(1100px,100% - 40px);margin-inline:auto}
+section{padding:88px 0}
+.lead{max-width:60ch;margin-bottom:2.5rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--orange);color:var(--ink);font-family:var(--head);font-weight:600;font-size:1rem;padding:.9rem 1.5rem;border-radius:999px;text-decoration:none;transition:background .2s,transform .2s}
+.btn:hover{background:#ffb454;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{border-color:var(--orange);background:transparent}
+.btn.dark{background:var(--ink);color:var(--white)}
+.btn.dark:hover{background:var(--ink-2)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:3px solid var(--orange)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.logo svg{height:38px;width:auto}
+.logo b{font-family:var(--head);font-weight:800;font-size:1.5rem;color:var(--white);line-height:1}
+.logo small{display:block;font-size:.55rem;letter-spacing:.32em;color:#b9bac4;margin-top:3px;text-transform:uppercase}
+.links{display:flex;gap:1.6rem;align-items:center}
+.links a{color:#d6d7de;text-decoration:none;font-weight:500;font-size:.95rem}
+.links a:hover{color:var(--orange)}
+.links .btn{padding:.55rem 1.1rem;font-size:.9rem;color:var(--ink)}
+@media(max-width:820px){.links a:not(.btn){display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:#d6d7de;padding:72px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.hero h1{color:var(--white);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+.hero p{font-size:1.15rem;margin:1.4rem 0 2rem;max-width:46ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem}
+.player{background:var(--ink-2);border:1px solid #33343f;border-radius:18px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.screen{aspect-ratio:16/10;border-radius:10px;background:radial-gradient(circle at 70% 30%,#2b2c3a,#181822);position:relative;display:grid;place-items:center}
+.screen svg{width:34%;opacity:.95}
+.live{position:absolute;top:12px;left:12px;background:var(--orange);color:var(--ink);font:700 .75rem var(--head);padding:.25rem .7rem;border-radius:999px;display:flex;align-items:center;gap:.4rem}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--ink);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.2}}
+.viewers{position:absolute;bottom:12px;right:12px;color:#d6d7de;font-size:.8rem}
+.bar{height:6px;border-radius:3px;background:#33343f;margin:14px 6px 4px;overflow:hidden}
+.bar span{display:block;width:62%;height:100%;background:var(--orange)}
+.pmeta{display:flex;justify-content:space-between;font-size:.8rem;padding:6px;color:#9a9bab}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:48px 0 64px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* services */
+.services{background:var(--white)}
+.svc{display:grid;grid-template-columns:260px 1fr;gap:12px 40px;padding:28px 0;border-top:1px solid var(--line)}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc ul{list-style:none;padding:0;margin-top:.7rem}
+.svc li{padding-left:1.3rem;position:relative;margin:.25rem 0}
+.svc li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.svc strong{color:var(--ink)}
+@media(max-width:700px){.svc{grid-template-columns:1fr}}
+
+/* portfolio */
+.work{background:var(--mist)}
+.ph{background:repeating-linear-gradient(135deg,#e8e9ee,#e8e9ee 12px,#eff0f3 12px,#eff0f3 24px);border:2px dashed #b7b9c4;border-radius:12px;display:grid;place-items:center;text-align:center;color:#7b7d8c;font-size:.9rem;padding:12px}
+.project{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-bottom:56px}
+.project .ph.big{aspect-ratio:16/10}
+.project .side{display:grid;grid-template-rows:1fr 1fr;gap:24px}
+.facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:3px solid var(--orange);padding-top:16px}
+.facts dt{font:600 .85rem var(--head);color:var(--ink)}
+.facts dd{margin:0}
+.sub{margin:56px 0 18px}
+.video{aspect-ratio:16/9;background:var(--ink);border-radius:14px;display:grid;place-items:center;color:#d6d7de;text-align:center;padding:20px}
+.video iframe,.video video{width:100%;height:100%;border:0;border-radius:14px;object-fit:cover}
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.vgrid .video:first-child.feature{grid-column:1/-1}
+.cap{font-size:.9rem;margin-top:8px;color:var(--slate)}
+@media(max-width:700px){.vgrid{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery .ph{aspect-ratio:4/5}
+@media(max-width:800px){.project{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.project .side{grid-template-rows:none;grid-template-columns:1fr 1fr}.project .side .ph{aspect-ratio:1}}
+
+
+.proj{border-top:3px solid var(--orange);padding:28px 0 52px}
+.proj h3{font-size:1.6rem}
+.meta{display:flex;flex-wrap:wrap;gap:4px 28px;font-size:.92rem;margin:.5rem 0 .9rem}
+.meta b{color:var(--ink);font-family:var(--head);font-weight:600}
+.desc{max-width:62ch;margin-bottom:1.4rem}
+.sublabel{font:600 .95rem var(--head);color:var(--ink);margin:24px 0 10px}
+.imgs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.imgs .ph{aspect-ratio:4/3}
+@media(max-width:700px){.imgs{grid-template-columns:1fr 1fr}}
+
+.vgrid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:800px){.vgrid3{grid-template-columns:1fr}}
+
+
+/* title cards */
+.tc{background:var(--ink);color:#fff;border-radius:16px;padding:0 30px 26px;margin-bottom:32px;overflow:hidden}
+.tc::before{content:"";display:block;height:16px;margin:0 -30px 22px;background:repeating-linear-gradient(115deg,var(--orange) 0 28px,var(--ink) 28px 56px)}
+.tc h2{color:#fff;margin:0;font-weight:800;letter-spacing:-.01em}
+.tc p{margin:.5rem 0 0;color:#c9cad4;max-width:60ch}
+.packages .tc{background:var(--orange)}
+.packages .tc::before{background:repeating-linear-gradient(115deg,var(--ink) 0 28px,var(--orange) 28px 56px)}
+.packages .tc h2,.packages .tc p{color:var(--ink)}
+/* service color cards */
+.svc{border:0!important;border-radius:16px;padding:30px 32px;margin-bottom:16px;background:var(--bg);color:var(--fg)}
+.svc h3{color:var(--fg);font-size:1.5rem;font-weight:700}
+.svc li::before{background:var(--acc)}
+.c1{--bg:#F5A33A;--fg:#14141C;--acc:#14141C}
+.c2{--bg:#14141C;--fg:#fff;--acc:#F5A33A}
+.c3{--bg:#FFE3B8;--fg:#14141C;--acc:#C97A12}
+.c4{--bg:#A8640B;--fg:#fff;--acc:#FFE3B8}
+/* swipe reel (9:16) */
+.reel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;-webkit-overflow-scrolling:touch}
+.reel figure{flex:0 0 min(68%,280px);scroll-snap-align:start}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:var(--ink);display:block}
+.reel figcaption{font:600 .95rem var(--head);color:var(--ink);margin-top:8px}
+.swipe{font-size:.85rem;margin:-4px 0 12px}
+
+/* packages */
+.packages{background:var(--ink);color:#c9cad4}
+.packages h2,.packages h3{color:var(--white)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.tier{border:1px solid #3a3b48;border-radius:16px;padding:30px;display:flex;flex-direction:column;background:var(--ink-2)}
+.tier.pick{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.tier.pick h3,.tier.pick .price{color:var(--ink)}
+.price{font:700 2rem var(--head);color:var(--orange);margin:.8rem 0 .2rem}
+.tier .note{font-size:.85rem;opacity:.8}
+.tier ul{list-style:none;padding:0;margin:1.2rem 0 1.8rem;flex:1}
+.tier li{padding:.45rem 0 .45rem 1.5rem;position:relative;border-top:1px solid rgba(255,255,255,.12)}
+.tier.pick li{border-color:rgba(20,20,28,.2)}
+.tier li::before{content:"✓";position:absolute;left:0;font-weight:700}
+.tier .btn{justify-content:center}
+.tier.pick .btn{background:var(--ink);color:var(--white)}
+.addons{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.addon{border-left:4px solid var(--orange);padding:6px 0 6px 18px}
+.addon b{color:var(--white);font-family:var(--head)}
+.addon span{color:var(--orange);font-weight:700}
+@media(max-width:900px){.tiers,.addons{grid-template-columns:1fr}}
+
+/* process */
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps li{counter-increment:s;border-top:4px solid var(--orange);padding-top:16px}
+.steps li::before{content:counter(s);display:block;font:800 2.4rem var(--head);color:var(--orange);line-height:1;margin-bottom:.4rem}
+.steps strong{display:block;color:var(--ink);font-family:var(--head);margin-bottom:.3rem}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--mist)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cbox{background:var(--ink);color:#d6d7de;border-radius:18px;padding:32px}
+.cbox dl{display:grid;grid-template-columns:auto 1fr;gap:12px 20px;margin:0}
+.cbox dt{color:var(--orange);font:600 .9rem var(--head)}
+.cbox dd{margin:0;word-break:break-word}
+.cbox a{text-decoration:none;border-bottom:1px solid #555}
+@media(max-width:800px){.contact .wrap{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#9a9bab;text-align:center;padding:28px 20px;border-top:3px solid var(--orange);font-size:.9rem}
+.float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.float svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+
+<!-- Logo symbol reused via <symbol> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64">
+    <path d="M46 14a24 24 0 1 0 0 36" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+    <path d="M27 23l16 9-16 9z" fill="#F5A33A" stroke="#F5A33A" stroke-width="3" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Clasik Creative Services home">
+      <svg viewBox="0 0 64 64" style="color:#fff"><use href="#mark"/></svg>
+      <span><b>Clasik</b><small>Creative Services</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#work">Our work</a>
+      <a href="#packages">Packages</a>
+      <a href="#process">How we work</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20to%20book%20Clasik%20for%20my%20event." target="_blank" rel="noopener">Book on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>We film your event. We stream it. Everyone gets to be there.</h1>
+      <p>Clasik Creative Services covers weddings, ceremonies and programmes in Lagos, from first shot to final film, with a live broadcast for the guests who can’t make it.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20to%20book%20Clasik%20for%20my%20event." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <a class="btn ghost" href="#packages">See our packages</a>
+      </div>
+    </div>
+    <div class="player" aria-hidden="true">
+      <div class="screen">
+        <span class="live"><i></i>LIVE</span>
+        <svg viewBox="0 0 64 64" style="color:#fff"><use href="#mark"/></svg>
+        <span class="viewers">Guests watching from Lagos, London, Houston…</span>
+      </div>
+      <div class="bar"><span></span></div>
+      <div class="pmeta"><span>Wedding ceremony</span><span>Streaming now</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="tc"><h2>What we do</h2><p>Four services. Book them together or on their own.</p></div>
+
+    <div class="svc c1">
+      <h3>Event production and documentary</h3>
+      <div>
+        <p>Professional photo and video coverage, with edited highlights and full documentary-style films.</p>
+        <ul>
+          <li>Photo and video coverage of your event</li>
+          <li>Edited highlights</li>
+          <li>A full documentary-style film you can keep and share</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc c2">
+      <h3>Event livestream</h3>
+      <div>
+        <p>A live broadcast so family, friends and fans anywhere can watch in real time.</p>
+        <ul>
+          <li>Reach guests who can’t be at the venue</li>
+          <li>Relatives abroad and absent guests join live</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc c3">
+      <h3>Livestream setup and training</h3>
+      <div>
+        <p>We set up your streaming equipment and train your team to run it themselves.</p>
+        <ul>
+          <li>Streaming equipment set up for you</li>
+          <li>Your team trained to run it</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc c4">
+      <h3>Multimedia consultation</h3>
+      <div>
+        <p>Advice on the right audio, video and streaming approach for your event or organisation.</p>
+        <ul>
+          <li>Guidance on audio, video and streaming</li>
+          <li>For events and organisations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="tc"><div class="tc"><h2>Our work</h2><p>Recent events we’ve filmed and streamed.</p></div>
+    <article class="proj" id="limitless">
+      <h3>Limitless Without Borders</h3>
+      <p class="meta"><span><b>Event type</b> Summit</span><span><b>Year</b> 2026</span></p>
+      <p class="meta"><span><b>Services</b> Live stream, event coverage including crane operation, roving cameras, live mixing</span></p>
+      <p class="desc">A summit on career, life and business growth, themed “Building for Global Relevance.”</p>
+      <p class="sublabel">Behind the scenes</p>
+      <p class="swipe">Swipe to see more →</p>
+      <div class="reel">
+        <figure><video src="videos/limitless-crane-operation.mp4" muted loop playsinline preload="metadata"></video><figcaption>Crane operation</figcaption></figure>
+        <figure><video src="videos/limitless-live-mixing.mp4" muted loop playsinline preload="metadata"></video><figcaption>Live mixing</figcaption></figure>
+        <figure><video src="videos/limitless-focus-cam.mp4" muted loop playsinline preload="metadata"></video><figcaption>Focus cam</figcaption></figure>
+      </div>
+    </article>
+    <article class="proj" id="throne">
+      <h3>Throne of Jokes</h3>
+      <p class="meta"><span><b>Event type</b> Comedy show</span><span><b>Year</b> 2026</span></p>
+      <p class="meta"><span><b>Services</b> Live stream, event coverage including focus cams, roving cameras, red carpet coverage, live mixing, media setup</span></p>
+      <p class="desc">A night of live comedy hosted by Ilefo Jesu.</p>
+      <p class="sublabel">Livestream</p>
+      <!-- Replace the inner div with: <iframe src="https://www.youtube.com/embed/THRONE_VIDEO_ID" title="Throne of Jokes livestream" allowfullscreen loading="lazy"></iframe> -->
+      <div class="video"><iframe src="https://www.youtube.com/embed/vhvlBTSAkEE" title="Throne of Jokes livestream" allowfullscreen loading="lazy"></iframe></div>
+      <p class="sublabel">Behind the scenes</p>
+      <p class="swipe">Swipe to see more →</p>
+      <div class="reel">
+        <figure><video src="videos/throne-roving-camera.mp4" muted loop playsinline preload="metadata"></video><figcaption>Roving camera</figcaption></figure>
+        <figure><video src="videos/throne-live-mixing.mp4" muted loop playsinline preload="metadata"></video><figcaption>Live mixing</figcaption></figure>
+        <figure><video src="videos/throne-focus-cam.mp4" muted loop playsinline preload="metadata"></video><figcaption>Focus cam</figcaption></figure>
+      </div>
+    </article>
+    <article class="proj" id="mm">
+      <h3>Marriage and Money Summit 2.0</h3>
+      <p class="meta"><span><b>Event type</b> Summit</span><span><b>Year</b> 2026</span></p>
+      <p class="meta"><span><b>Services</b> Live stream, event coverage including focus cam, roving camera, live mixing, media setup</span></p>
+      <p class="desc">A summit on marriage and finance, built around the theme “The Power Couple Blueprint.”</p>
+      <p class="sublabel">Livestream</p>
+      <!-- Replace the inner div with: <iframe src="https://www.youtube.com/embed/MM_VIDEO_ID" title="Marriage and Money Summit 2.0 livestream" allowfullscreen loading="lazy"></iframe> -->
+      <div class="video"><iframe src="https://www.youtube.com/embed/3OU1otN3EPM" title="Marriage and Money Summit 2.0 livestream" allowfullscreen loading="lazy"></iframe></div>
+      <p class="sublabel">Behind the scenes</p>
+      <p class="swipe">Swipe to see more →</p>
+      <div class="reel">
+        <figure><video src="videos/mm-roving-camera.mp4" muted loop playsinline preload="metadata"></video><figcaption>Roving camera</figcaption></figure>
+        <figure><video src="videos/mm-focus-cam.mp4" muted loop playsinline preload="metadata"></video><figcaption>Focus cam</figcaption></figure>
+        <figure><video src="videos/mm-live-mixing.mp4" muted loop playsinline preload="metadata"></video><figcaption>Live mixing</figcaption></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="wrap">
+    <h2>Packages</h2><p>Pick a package, or tell us what you need and we’ll build a quote around it.</p></div>
+
+    
+    <div class="tiers">
+      <div class="tier">
+        <h3>Coverage</h3>
+        <ul>
+          <li>Photo and video coverage</li>
+          <li>Edited highlights</li>
+          <li>Documentary-style film to keep</li>
+        </ul>
+        <a class="btn" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20the%20Coverage%20package." target="_blank" rel="noopener">Request a quote</a>
+      </div>
+      <div class="tier pick">
+        <h3>Full event</h3>
+        <ul>
+          <li>Everything in Coverage</li>
+          <li>Live broadcast of the event</li>
+          <li>One team, one quote</li>
+        </ul>
+        <a class="btn" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20the%20Full%20event%20package." target="_blank" rel="noopener">Request a quote</a>
+      </div>
+      <div class="tier">
+        <h3>Livestream</h3>
+        <ul>
+          <li>Live broadcast of your event</li>
+          <li>Guests abroad join in real time</li>
+          <li>Crew and equipment on the day</li>
+        </ul>
+        <a class="btn" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20the%20Livestream%20package." target="_blank" rel="noopener">Request a quote</a>
+      </div>
+    </div>
+
+    <div class="addons">
+      <div class="addon"><b>Livestream setup and training</b><br>We set up your equipment and train your team.</div>
+      <div class="addon"><b>Multimedia consultation</b><br>Advice on audio, video and streaming.</div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="tc"><h2>How we work</h2><p>Every booking follows the same four steps.</p></div>
+    <ol class="steps">
+      <li><strong>Enquire</strong>Tell us the event type, date, venue and what you need covered.</li>
+      <li><strong>Plan</strong>We agree the services, team and equipment, and confirm the quote.</li>
+      <li><strong>Deliver</strong>Our crew films and streams on the day.</li>
+      <li><strong>Follow up</strong>Edited films and files are handed over after the event.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="tc"><h2>Tell us about your event</h2><p>Send the date, venue and what you need covered. We’ll reply on WhatsApp with a quote.</p></div>
+      <a class="btn dark" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20to%20book%20Clasik%20for%20my%20event." target="_blank" rel="noopener">Book on WhatsApp</a>
+    </div>
+    <div class="cbox">
+      <dl>
+        <dt>Phone / WhatsApp</dt><dd><a href="tel:+2348080681265">+234 808 068 1265</a></dd>
+        <dt>Email</dt><dd><a href="mailto:ClasikMultimediastudios@gmail.com">ClasikMultimediastudios@gmail.com</a></dd>
+        <dt>Instagram</dt><dd><a href="https://instagram.com/clasikcreativeservices" target="_blank" rel="noopener">@clasikcreativeservices</a></dd>
+        <dt>Address</dt><dd>36 Ogunlana Street, Egbeda Bus Stop, Akowonjo, Lagos</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="yr">2026</span> Clasik Creative Services, formerly ClasikMultimedia. Lagos, Nigeria.</footer>
+
+<a class="float" href="https://wa.me/2348080681265?text=Hi%2C%20I%27d%20like%20to%20book%20Clasik%20for%20my%20event." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.200 1 2.100 1.300 2.400 1.400.3.100.5.100.6-.1l.9-1.100c.2-.3.4-.2.600-.1l1.900.9c.3.100.5.200.5.300.100.100.100.700-.1 1.300z"/></svg>
+</a>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('.reel video'));
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(calm||!('IntersectionObserver' in window)){vids.forEach(function(v){v.controls=true;v.muted=false;v.loop=false});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}
+  })},{threshold:.25});
+  vids.forEach(function(v){
+    io.observe(v);
+    v.addEventListener('click',function(){
+      if(v.muted){v.muted=false;v.controls=true}else{v.muted=true;v.controls=false}
+    });
+  });
+})();
+</script>
+</body>
+</html>
